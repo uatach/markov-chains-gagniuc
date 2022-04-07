@@ -9,24 +9,21 @@ def algo01():
         choice = random.randrange(len(jar))
         return jar[choice]
 
-    jars = [
-        "WWBBBBBBBB",
-        "WWWWWBBBBB",
-    ]
+    jars = {
+        "W": "WWBBBBBBBB",
+        "B": "WWWWWBBBBB",
+    }
 
     draws = 17
-    choice = random.randrange(len(jars))
+    choice = random.choice(list(jars.keys()))
     ball = draw(jars[choice])
 
-    output = f" Jar W[{ball}],"
+    output = f" Jar {choice}[{ball}],"
 
     for _ in range(draws):
-        if ball == "W":
-            ball = draw(jars[0])
-            output += f" Jar W[{ball}],"
-        else:
-            ball = draw(jars[1])
-            output += f" Jar B[{ball}],"
+        choice = ball
+        ball = draw(jars[choice])
+        output += f" Jar {choice}[{ball}],"
 
     print(output)
 
