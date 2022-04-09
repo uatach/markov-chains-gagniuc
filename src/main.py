@@ -33,7 +33,7 @@ def algo01():
     print(simulate01(jars))
 
 
-def fill(ratio):
+def fill02(ratio):
     white = int(100 * ratio)
     black = 100 - white
     assert white + black == 100
@@ -42,8 +42,8 @@ def fill(ratio):
 
 def algo02():
     jars = {
-        "W": fill(0.2),
-        "B": fill(0.6),
+        "W": fill02(0.2),
+        "B": fill02(0.6),
     }
 
     print(simulate01(jars))
@@ -59,12 +59,35 @@ def algo03():
 
     for x in range(1, len(sequence) - 1):
         i = symbols.index(sequence[x])
-        j = symbols.index(sequence[x+1])
+        j = symbols.index(sequence[x + 1])
         counts[i][j] += 1
 
     print(counts)
     print(np.round(counts / counts.sum(axis=1, keepdims=True), 1))
 
 
+def algo04():
+    probs = np.array(
+        [
+            [
+                0.2,
+                0.625,
+            ],
+            [
+                0.8,
+                0.375,
+            ],
+        ]
+    )
+
+    n_chains = 5
+    preds = (1, 0)
+    for i in range(n_chains):
+        x = preds[0] * probs[0][0] + preds[1] * probs[0][1]
+        y = preds[0] * probs[1][0] + preds[1] * probs[1][1]
+        preds = (x, y)
+        print(" | ".join(map(lambda x: f"{x:.8f}", preds)))
+
+
 if __name__ == "__main__":
-    algo03()
+    algo04()
