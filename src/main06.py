@@ -1,5 +1,3 @@
-import numpy as np
-
 from main04 import probs
 
 

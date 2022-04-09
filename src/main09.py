@@ -1,5 +1,4 @@
 from main03 import extract_probs
-from main04 import update
 
 
 def main():

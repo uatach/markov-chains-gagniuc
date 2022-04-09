@@ -14,4 +14,6 @@ The ball drawn indicates the color of the jar used for the next draw;
 1. The algorithm generates predictions until a steady state is detected;
 1. The algorithm calculates the steady state using a closed-form equation;
 1. The algorithm combines the extraction of probabilities with the generation of predictions;
-1.
+1. The algorithm extends the previous one to work with 3-state chains;
+1. The algorithm extends the previous one to work with 4-state chains;
+1. The algorithm is presented in the book with improvements to allow more states dynamically;
