@@ -1,21 +1,29 @@
 import numpy as np
 
 
-def main():
-    sequence = "SRRSRSRRSRSRRSS"
-
+def extract_counts(sequence):
     symbols = list(sorted(set(sequence)))
-    n_symbols = len(symbols)
+    size = len(symbols)
 
-    counts = np.zeros((n_symbols, n_symbols))
+    counts = np.zeros((size, size))
 
     for x in range(1, len(sequence) - 1):
         i = symbols.index(sequence[x])
         j = symbols.index(sequence[x + 1])
         counts[i][j] += 1
+    return counts
 
-    print(counts)
-    print(np.round(counts / counts.sum(axis=1, keepdims=True), 1))
+
+def extract_probs(sequence):
+    counts = extract_counts(sequence)
+    return counts / counts.sum(axis=1, keepdims=True)
+
+
+def main():
+    sequence = "SRRSRSRRSRSRRSS"
+    probs = np.round(extract_probs(sequence), 1)
+    print(extract_counts(sequence))
+    print(probs)
 
 
 if __name__ == "__main__":
