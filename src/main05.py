@@ -1,22 +1,9 @@
 import numpy as np
 
-from main04 import update
+from main04 import probs, update
 
 
 def main():
-    probs = np.array(
-        [
-            [
-                0.375,
-                0.625,
-            ],
-            [
-                0.8,
-                0.2,
-            ],
-        ]
-    )
-
     n_chains = 50
     preds = (0, 1)
     for i in range(n_chains):
