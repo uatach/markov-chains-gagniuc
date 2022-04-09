@@ -13,5 +13,5 @@ def main():
         print(" | ".join(map(lambda x: f"{x:.8f}", preds)))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

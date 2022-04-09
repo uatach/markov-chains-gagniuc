@@ -1,25 +1,26 @@
 import numpy as np
 
+from main04 import update
+
 
 def main():
     probs = np.array(
         [
             [
-                0.2,
+                0.375,
                 0.625,
             ],
             [
                 0.8,
-                0.375,
+                0.2,
             ],
         ]
     )
 
     n_chains = 50
-    preds = (1, 0)
+    preds = (0, 1)
     for i in range(n_chains):
-        x = preds[0] * probs[0][0] + preds[1] * probs[0][1]
-        y = preds[0] * probs[1][0] + preds[1] * probs[1][1]
+        x, y = update(preds, probs)
 
         if np.allclose(preds, (x, y)):
             print(f"steady steate at {i}")
