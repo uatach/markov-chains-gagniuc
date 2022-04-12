@@ -1,0 +1,3 @@
+{'A': 'AAAAAAAAABBBBBBBBBCCCCCCCCC', 'B': 'BBBBBBBBBBBBBCCCCCCCCCCCCC', 'C': 'AAAAAAAAAAAAAAAAAAAAAAAAAAA'}
+ACAACAAAACACABBCAAAAA
+ Jar A[C], Jar C[A], Jar A[A], Jar A[C], Jar C[A], Jar A[A], Jar A[A], Jar A[A], Jar A[C], Jar C[A], Jar A[C], Jar C[A], Jar A[B], Jar B[B], Jar B[C], Jar C[A], Jar A[A], Jar A[A], Jar A[A], Jar A[A], Jar A[A],
