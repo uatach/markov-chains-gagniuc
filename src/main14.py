@@ -40,7 +40,6 @@ def simulate(jars):
 
 def main():
     jars = {k: fill(v) for k, v in configs.items()}
-
     output = simulate(jars)
 
     print(jars)
