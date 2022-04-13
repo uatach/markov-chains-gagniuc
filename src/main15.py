@@ -1,5 +1,3 @@
-import numpy as np
-
 from main01 import draw
 from main14 import fill
 
